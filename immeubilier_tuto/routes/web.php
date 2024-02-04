@@ -1,7 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\Admin\PropertyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +11,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
+});
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::resource('property',PropertyController::class);
 });
