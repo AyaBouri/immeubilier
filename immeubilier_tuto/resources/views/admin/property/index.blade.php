@@ -23,6 +23,16 @@
                 <td>{{$property->surface}} m²</td>
                 <td>{{number_format($property->price,thousands_separator: ' ')}}</td>
                 <td>{{$property->city}}</td>
+                <td>
+                    <div class="d-flex gap-2 w-100 justify-content-end">
+                        <a href="{{route('admin.property.edit',$property)}}">Editer</a>
+                        <form action="{{route('admin.property.destroy',$property)}}" method="post">
+                            @csrf
+                            @method("delete")
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </div>
+                </td>
             </tr>
         @endforeach
         </tbody>
