@@ -4,7 +4,7 @@
     <h1>Le biens</h1>
     <div class="d-flex justify-content-between align-items-center">
         <h1>@yield('title')</h1>
-        <a href="{{route('admin.property.create')}}" class="btn btn-primary">Ajouter un bien</a>
+        <a href="{{route('admin.option.create')}}" class="btn btn-primary">Ajouter un bien</a>
     </div>
     <table class="table table-striped">
         <thead>
@@ -16,7 +16,7 @@
         <tbody>
         @foreach($option as $options)
             <tr>
-                <td>{{$option->name}}</td>
+                <td>{{$options->name}}</td>
                 <td>
                     <div class="d-flex gap-2 w-100 justify-content-end">
                         <a href="{{route('admin.option.edit',$option)}}">Editer</a>

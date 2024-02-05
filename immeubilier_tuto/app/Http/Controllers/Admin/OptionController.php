@@ -13,7 +13,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return view('admin.options.index',[
+        return view('admin.option.index',[
             'option'=>Property::paginate(25)
         ]);
     }
@@ -24,7 +24,7 @@ class OptionController extends Controller
     public function create()
     {
         $option=new Option();
-        return view('admin.options.form',[
+        return view('admin.option.form',[
             'option'=>$option
         ]);
     }
@@ -51,7 +51,7 @@ class OptionController extends Controller
      */
     public function edit(Property $option)
     {
-        return view('admin.options.form',[
+        return view('admin.option.form',[
             'property'=>$option
         ]);
     }
@@ -62,7 +62,7 @@ class OptionController extends Controller
     public function update(OptionFormRequest $request, Option $option)
     {
         $option->update($request->validate());
-        return to_route('admin.options.index')->with('success','L option a bien été modifié');
+        return to_route('admin.option.index')->with('success','L option a bien été modifié');
     }
 
     /**
@@ -71,6 +71,6 @@ class OptionController extends Controller
     public function destroy(Option $option)
     {
         $option->delete();
-        return to_route('admin.options.index')->with('success','L option a bien été supprimé');
+        return to_route('admin.option.index')->with('success','L option a bien été supprimé');
     }
 }
