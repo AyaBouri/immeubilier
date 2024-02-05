@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PropertyFormRequest;
+use App\Http\Requests\admin\PropertyFormRequest;
 use App\Models\Property;
 use Illuminate\Http\Request;
 class PropertyController extends Controller
@@ -39,7 +39,7 @@ class PropertyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PropertyFormRequest $request)
+    public function store( PropertyFormRequest $request)
     {
         $property=Property::create($request->validated());
         return to_route('admin.property.index')->with('success','Le bien à été bien crée');
