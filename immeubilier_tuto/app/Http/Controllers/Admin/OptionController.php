@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\OptionFormRequest;
 use App\Http\Requests\admin\PropertyFormRequest;
 use App\Models\Option;
 use App\Models\Property;
@@ -13,7 +14,7 @@ class OptionController extends Controller
     public function index()
     {
         return view('admin.options.index',[
-            'option'=>Property::orderBy('created_by','desc')->paginate(25)
+            'option'=>Property::paginate(25)
         ]);
     }
 
@@ -23,15 +24,6 @@ class OptionController extends Controller
     public function create()
     {
         $option=new Option();
-        $option->fill([
-            'surface'=>48,
-            'rooms'=>3,
-            'bedrooms'=>1,
-            'floor'=>0,
-            'city'=>'Casablanca',
-            'postal_code'=>6000,
-            'sold'=>false,
-        ]);
         return view('admin.options.form',[
             'option'=>$option
         ]);
@@ -40,10 +32,10 @@ class OptionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PropertyFormRequest $option)
+    public function store(OptionFormRequest $option)
     {
         $property=Option::create($option->validated());
-        return to_route('admin.options.index')->with('success','Le bien à été bien crée');
+        return to_route('admin.options.index')->with('success','L option à été bien crée');
     }
 
     /**
@@ -67,10 +59,10 @@ class OptionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PropertyFormRequest $request, Property $option)
+    public function update(OptionFormRequest $request, Option $option)
     {
         $option->update($request->validate());
-        return to_route('admin.options.index')->with('success','Le bien a bien été modifié');
+        return to_route('admin.options.index')->with('success','L option a bien été modifié');
     }
 
     /**
@@ -79,6 +71,6 @@ class OptionController extends Controller
     public function destroy(Option $option)
     {
         $option->delete();
-        return to_route('admin.options.index')->with('success','Le bien a bien été supprimé');
+        return to_route('admin.options.index')->with('success','L option a bien été supprimé');
     }
 }
