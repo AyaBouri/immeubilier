@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\PropertyFormRequest;
+use App\Models\Option;
 use App\Models\Property;
 use Illuminate\Http\Request;
 class OptionController extends Controller
@@ -11,8 +12,8 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return view('admin.property.index',[
-            'property'=>Property::orderBy('created_by','desc')->paginate(25)
+        return view('admin.options.index',[
+            'option'=>Property::orderBy('created_by','desc')->paginate(25)
         ]);
     }
 
@@ -21,8 +22,8 @@ class OptionController extends Controller
      */
     public function create()
     {
-        $property=new Property();
-        $property->fill([
+        $option=new Option();
+        $option->fill([
             'surface'=>48,
             'rooms'=>3,
             'bedrooms'=>1,
@@ -31,18 +32,18 @@ class OptionController extends Controller
             'postal_code'=>6000,
             'sold'=>false,
         ]);
-        return view('admin.property.form',[
-            'property'=>$property
+        return view('admin.options.form',[
+            'option'=>$option
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PropertyFormRequest $request)
+    public function store(PropertyFormRequest $option)
     {
-        $property=Property::create($request->validated());
-        return to_route('admin.property.index')->with('success','Le bien à été bien crée');
+        $property=Option::create($option->validated());
+        return to_route('admin.options.index')->with('success','Le bien à été bien crée');
     }
 
     /**
@@ -56,28 +57,28 @@ class OptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Property $property)
+    public function edit(Property $option)
     {
-        return view('admin.property.form',[
-            'property'=>$property
+        return view('admin.options.form',[
+            'property'=>$option
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(PropertyFormRequest $request, Property $property)
+    public function update(PropertyFormRequest $request, Property $option)
     {
-        $property->update($request->validate());
-        return to_route('admin.property.index')->with('success','Le bien a bien été modifié');
+        $option->update($request->validate());
+        return to_route('admin.options.index')->with('success','Le bien a bien été modifié');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Property $property)
+    public function destroy(Option $option)
     {
-        $property->delete();
-        return to_route('admin.property.index')->with('success','Le bien a bien été supprimé');
+        $option->delete();
+        return to_route('admin.options.index')->with('success','Le bien a bien été supprimé');
     }
 }
