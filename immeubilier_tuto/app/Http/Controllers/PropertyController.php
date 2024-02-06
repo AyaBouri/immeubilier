@@ -9,7 +9,6 @@ class PropertyController extends Controller
         $query=Property::query();
         if($request->has('price')) {
             $query = Property::query();
-            // Filtrer par prix si le paramètre est présent
             if ($request->has('price')) {
                 $query = $query->where('price', '<=', $request->input('price'));
             }
@@ -18,7 +17,8 @@ class PropertyController extends Controller
         }
         //$properties=Property::paginate(16);
         return view('property.index',[
-            'properties'=>$query->paginate(16)
+            'properties'=>$query->paginate(16),
+            'input'=>$request->validated()
         ]);
     }
     public function show(string $slug,Property $property){
