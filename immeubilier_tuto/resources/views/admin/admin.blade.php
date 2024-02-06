@@ -8,6 +8,8 @@
         <link href="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl603oVMWSktQOp6b7In1Zl3/Jr59b6EGG59b6EGG0I1aFkw7
         cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.bootstrap5.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
         <title>@yield('title') | Administration</title>
     </head>
     <body>
@@ -49,5 +51,8 @@
             @endif
             @yield('content')
         </div>
+        <script>
+            new TomcatSelcet('select[multiple]',{plugins:{remove_btn:{title:'Supprimer'}}})
+        </script>
     </body>
 </html>

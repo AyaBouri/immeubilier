@@ -72,8 +72,8 @@ class PropertyController extends Controller
      */
     public function update(PropertyFormRequest $request, Property $property)
     {
-       // $property->options()->sync($request->validated('option'));
         $property->update($request->validate());
+        $property->options()->sync($request->validated('option'));
         return to_route('admin.property.index')->with('success','Le bien a bien été modifié');
     }
 
