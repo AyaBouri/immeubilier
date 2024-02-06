@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\PropertyFormRequest;
+use App\Models\Option;
 use App\Models\Property;
 use Illuminate\Http\Request;
 class PropertyController extends Controller
@@ -32,7 +33,8 @@ class PropertyController extends Controller
             'sold'=>false,
         ]);
         return view('admin.property.form',[
-            'property'=>$property
+            'property'=>$property,
+            'options'=>Option::pluck('name','id')
         ]);
     }
 
@@ -59,7 +61,8 @@ class PropertyController extends Controller
     public function edit(Property $property)
     {
         return view('admin.property.form',[
-            'property'=>$property
+            'property'=>$property,
+            'options'=>Option::pluck('name','id')
         ]);
     }
 
