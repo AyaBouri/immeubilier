@@ -8,9 +8,7 @@
     <link href="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl603oVMWSktQOp6b7In1Zl3/Jr59b6EGG59b6EGG0I1aFkw7
         cmDA6j6gD" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.bootstrap5.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
-    <title>@yield('title') | Administration</title>
+    <title>@yield('title') | MonAgence</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
@@ -25,34 +23,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="{{route('admin.property.index')}}" @class(['nav-link','active'=>str_contains($route,'property.')])>Gérer les biens</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.option.index')}}" @class(['nav-link','active'=>str_contains($route,'property.')])>Gérer les options</a>
+                    <a href="/" @class(['nav-link','active'=>str_contains($route,'property.')])>Biens</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container mt-5">
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{session('success')}}
-        </div>
-    @endif
-    @if($errors->all())
-        <div class="alert alert-danger">
-            <ul class="my-0">
-                @foreach($error->all() as $errors)
-                    {{@$errors}}
-                @endforeach
-            </ul>
-        </div>
-    @endif
     @yield('content')
-</div>
-<script>
-    new TomcatSelcet('select[multiple]',{plugins:{remove_btn:{title:'Supprimer'}}})
-</script>
 </body>
 </html>
