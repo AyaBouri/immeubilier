@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl603oVMWSktQOp6b7In1Zl3/Jr59b6EGG59b6EGG0I1aFkw7
         cmDA6j6gD" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <title>@yield('title') | MonAgence</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/" @class(['nav-link','active'=>str_contains($route,'property.')])>Biens</a>
+                    <a href="{{route('property.index')}}" @class(['nav-link','active'=>str_contains($route,'property.')])>Biens</a>
                 </li>
             </ul>
         </div>
