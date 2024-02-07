@@ -11,6 +11,7 @@ class Property extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    //public $timestamps
     protected $fillable=[
         'title',
         'description',

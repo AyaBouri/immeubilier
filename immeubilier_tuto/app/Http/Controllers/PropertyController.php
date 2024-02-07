@@ -6,7 +6,6 @@ use App\Mail\PropertyContactMail;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
 class PropertyController extends Controller
 {
     public function index(SearchPropertiesRequest $request){

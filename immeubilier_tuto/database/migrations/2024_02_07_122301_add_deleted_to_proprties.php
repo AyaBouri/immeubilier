@@ -10,8 +10,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('proprties', function (Blueprint $table) {
-           // $table->dateTime('deleted_at')->nullable();
-            $table->softDeletes();
+           $table->dateTime('deleted_at')->nullable();
+            //$table->softDeletes();
         });
     }
     /**
