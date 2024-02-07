@@ -4,6 +4,7 @@ use \App\Http\Controllers\Admin\PropertyController;
 use \App\Http\Controllers\Admin\OptionController;
 use \App\Http\Controllers\HomController;
 use \App\Http\Controllers\AuthController;
+use \App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,10 @@ use \App\Http\Controllers\AuthController;
 */
 $idRegex='[0-9]+';
 $slugRegex='[0-9a-z\-]+';
-Route::get('/',[HomController::class,'index']);
+Route::get('/', function () {
+    return view('/base');
+});
+//Route::get('/',[HomeController::class,'base']);
 Route::get('/biens',[\App\Http\Controllers\PropertyController::class,'index'])->name('property.index');
 Route::get('/biens/{slug}-{property}',[\App\Http\Controllers\PropertyController::class,'index'])->name('property.show')->where([
     'property'=> $idRegex,
@@ -29,6 +33,8 @@ Route::post('/biens/{property}/contact',[PropertyController::class,'contact'])->
 Route::get('/login',[AuthController::class,'login'])
     ->middleware('guest')
     ->name('login');
+
+
 Route::post('/login',[AuthController::class,'doLogin']);
 Route::delete('/logout',[AuthController::class,'logout'])
     ->middleware('auth')
