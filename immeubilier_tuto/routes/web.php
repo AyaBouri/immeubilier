@@ -25,7 +25,7 @@ Route::post('/biens/{property}/contact',[PropertyController::class,'contact'])->
     'property'=>$idRegex,
     //'slug'=>$slugRegex
 ]);
-Route::prefix('admin')->name('admin.')->group(function (){
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function (){
     Route::resource('property',PropertyController::class)->except(['show']);
     Route::resource('option',OptionController::class)->except(['show']);
 });

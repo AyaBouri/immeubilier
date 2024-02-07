@@ -1,5 +1,6 @@
 <?php
 namespace App\Mail;
+use App\Models\Property;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,7 +13,7 @@ class PropertyContactMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public Property $property,public array $data)
     {
         //
     }
@@ -22,7 +23,9 @@ class PropertyContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Property Contact Mail',
+            to: 'admin@doe.fr',
+            replyTo: $this->data['email'],
+            subject: 'Property Contact Mail'
         );
     }
     /**
@@ -31,7 +34,7 @@ class PropertyContactMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            html: 'emails.property.contact',
+            markdown: 'emails.property.contact',
         );
     }
     /**

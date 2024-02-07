@@ -10,17 +10,17 @@
         <hr>
         <div class="mt-4">
             <h4>Intéressé par ce bien?</h4>
+            @include('shared.flash')
             <form action="{{route('property.contact',$property)}}" method="post" class="vstack gap-3">
                 @csrf
                 <div class="row">
-                    @include('shared.input',['class'=>'col','name'=>'firstname','label'=>'Prénom','value'=>'John'])
-                    @include('shared.input',['class'=>'col','name'=>'lastname','label'=>'Nom','value'=>'Doe'])
+                    @include('shared.input',['class'=>'col','name'=>'firstname','label'=>'Prénom')
                 </div>
                 <div class="row">
-                    @include('shared.input',['class'=>'col','name'=>'phone','label'=>'Téléphone','value'=>'06 00 00 00 00'])
-                    @include('shared.input',['type'=>'email','class'=>'col','name'=>'email','label'=>'Email','value'=>'john@doepublic.fr'])
+                    @include('shared.input',['class'=>'col','name'=>'phone','label'=>'Téléphone'])
+                    @include('shared.input',['type'=>'email','class'=>'col','name'=>'email','label'=>'Email'])
                 </div>
-                @include('shared.input',['type'=>'textarea','class'=>'col','name'=>'message','label'=>'Votre Message','value'=>'Mon Petit Message'])
+                @include('shared.input',['type'=>'textarea','class'=>'col','name'=>'message','label'=>'Votre Message'])
                 <div>
                     <button class="btn btn-primary">Nous Contacter</button>
                 </div>
