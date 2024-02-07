@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\PropertyFormRequest;
 use App\Models\Option;
+use App\Models\Picture;
 use App\Models\Property;
 use Illuminate\Http\Request;
 class PropertyController extends Controller
@@ -13,7 +14,7 @@ class PropertyController extends Controller
     public function index()
     {
         return view('admin.property.index',[
-            'property'=>Property::orderBy('created_at','desc')->paginate(25)
+            'property'=>Property::orderBy('created_at','desc')->withTrashed()->paginate(25)
         ]);
     }
 
@@ -82,7 +83,8 @@ class PropertyController extends Controller
      */
     public function destroy(Property $property)
     {
-        $property->delete();
+        Picture::destroy($property->pictures()->pluck('id'));
+        $property->restore();
         return to_route('admin.property.index')->with('success','Le bien a bien été supprimé');
     }
 }

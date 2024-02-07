@@ -4,11 +4,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 class Property extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     protected $fillable=[
         'title',
         'description',
@@ -50,6 +52,9 @@ class Property extends Model
         return $builder->where('sold',!$avaiable);
     }
     public function scopeRequest(Builder $builder){
+        return $builder->orderBy('created_at','desc');
+    }
+    public function scopeRecent(Builder $builder):Builder{
         return $builder->orderBy('created_at','desc');
     }
 }
