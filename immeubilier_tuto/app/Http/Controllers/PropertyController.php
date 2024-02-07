@@ -28,5 +28,12 @@ class PropertyController extends Controller
         ]);
     }
     public function show(string $slug,Property $property){
+        $exptedSlug=$property.getSlug();
+        if($slug!=$exptedSlug){
+            return to_route('property.show',['slug'=>$exptedSlug,'properties'=>$property]);
+        }
+        return view('property.show',[
+            'property'=>$property
+        ]);
     }
 }
