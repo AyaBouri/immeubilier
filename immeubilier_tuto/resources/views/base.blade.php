@@ -64,7 +64,7 @@
                             <li><a href="#news-section" class="nav-link">News</a></li>
                             <li><a href="#contact-section" class="nav-link">Contact</a></li>
                             <li class="nav-item">
-                                <a href="{{route('login')}}" class="nav-item">Login</a>
+                                <a href="../auth/login.blade.php" class="nav-item">Login</a>
                             </li>
                         </ul>
                     </nav>

@@ -25,6 +25,9 @@ class Property extends Model
         'postal_code',
         'sold'
     ];
+    protected $casts=[
+        'created_at'=>'string'
+    ];
     public function options():BelongsToMany{
         return $this->belongsToMany(Option::class);
     }
