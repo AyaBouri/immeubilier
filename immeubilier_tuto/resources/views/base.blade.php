@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <base href="/">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl603oVMWSktQOp6b7In1Zl3/Jr59b6EGG59b6EGG0I1aFkw7
@@ -64,7 +65,7 @@
                             <li><a href="#news-section" class="nav-link">News</a></li>
                             <li><a href="#contact-section" class="nav-link">Contact</a></li>
                             <li class="nav-item">
-                                <a href="../auth/login.blade.php" class="nav-item">Login</a>
+                                <a href="./auth/login" class="nav-item">Login</a>
                             </li>
                         </ul>
                     </nav>
