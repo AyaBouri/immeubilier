@@ -6,16 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <base href="/">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    <!--<link href="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl603oVMWSktQOp6b7In1Zl3/Jr59b6EGG59b6EGG0I1aFkw7
         cmDA6j6gD" crossorigin="anonymous">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">-->
     <title>@yield('title') | MonAgence</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Free-Template.co" />
-    <link rel="shortcut icon" href="ftco-32x32.png">
+    <!--<link rel="shortcut icon" href="ftco-32x32.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Oswald:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,7 +27,15 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">-->
+    @vite(['resources/sass/app.scss',
+            'resources/js/app.js',
+            'resources/views/images',
+            'resources/views/js',
+            'resources/views/fonts',
+            'resources/views/css',
+            'resources/views/images',
+            'resources/views/scss',])
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -65,7 +73,7 @@
                             <li><a href="#news-section" class="nav-link">News</a></li>
                             <li><a href="#contact-section" class="nav-link">Contact</a></li>
                             <li class="nav-item">
-                                <a href="./auth/login" class="nav-item">Login</a>
+                                <a href="/login" class="nav-item">Login</a>
                             </li>
                         </ul>
                     </nav>
@@ -661,7 +669,7 @@
 
 <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a>
 
-<script src="js/jquery-3.3.1.min.js"></script>
+<!--<script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -672,28 +680,6 @@
 <script src="js/aos.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js"></script>-->
 </body>
 </html>
-
-<body>
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
-    <div class="container-fluid">
-        <a href="/" class="navbar-brand">Agence</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation"></button>
-        <span class="navbar-toggler-icon"></span>
-        @php
-            $route=request()->route()->getName();
-        @endphp
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{{route('property.index')}}" @class(['nav-link','active'=>str_contains($route,'property.')])>Biens</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-    @yield('content')
-</body>

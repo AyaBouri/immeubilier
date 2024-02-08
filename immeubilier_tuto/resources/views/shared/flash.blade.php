@@ -7,7 +7,7 @@
     <div class="alert alert-danger">
         <ul class="my-0">
             @foreach($error->all() as $errors)
-                {{@$errors}}
+                {{@$error}}
             @endforeach
         </ul>
     </div>
