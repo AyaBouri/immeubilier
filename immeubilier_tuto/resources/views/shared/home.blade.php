@@ -1,5 +1,6 @@
 @extends('base')
 @section('content')
+    <x-alert></x-alert>
     <div class="bg-light p-5 mb-5  text-center">
         <div class="container">
             <h1>Agence lorem ipsum</h1>
