@@ -33,7 +33,7 @@ Route::post('/biens/{property}/contact',[PropertyController::class,'contact'])->
 Route::get('/login',[AuthController::class,'login'])
     ->middleware('guest')
     ->name('login');
-
+    Route::get('/login', 'AuthController@login')->name('login');
 
 Route::post('/login',[AuthController::class,'doLogin']);
 Route::delete('/logout',[AuthController::class,'logout'])

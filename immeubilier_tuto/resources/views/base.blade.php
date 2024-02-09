@@ -17,17 +17,17 @@
         <meta name="author" content="Free-Template.co" />
         <link rel="shortcut icon" href="ftco-32x32.png">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Oswald:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="./fonts/icomoon/style.css">
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/jquery-ui.css">
-        <link rel="stylesheet" href="./css/owl.carousel.min.css">
-        <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
-        <link rel="stylesheet" href="./css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="./fonts/flaticon/font/flaticon.css">
-        <link rel="stylesheet" href="./css/aos.css">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="{{asset('assets.fonts.icomoon.style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.jquery.fancybox.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.bootstrap-datepicker.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.fonts.flaticon.font.flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.aos.css')}}">
+        <link rel="stylesheet" href="{{asset('assets.css.style.css')}}">
         @vite(['resources/sass/app.scss',
                 'resources/js/app.js',
                 'resources/views/images',
@@ -66,7 +66,7 @@
                                 <li><a href="#news-section" class="nav-link">News</a></li>
                                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
                                 <li class="nav-item">
-                                    <a href="/login" target="_blank">Login</a>
+                                    <a href="{{ url('login')}}" target="_blank">Login</a>
                                 </li>
                             </ul>
                         </nav>
@@ -135,7 +135,7 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
                         <div class="ftco-media-1">
                             <div class="ftco-media-1-inner">
-                                <a href="property-single.html" class="d-inline-block mb-4"><img src="images/property_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                                <a href="property-single.html" class="d-inline-block mb-4"><img src="{{asset('assets.images.property_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                                 <div class="ftco-media-details">
                                     <h3>HD17 19 Utica Ave.</h3>
                                     <p>New York - USA</p>
@@ -149,7 +149,7 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
                         <div class="ftco-media-1">
                             <div class="ftco-media-1-inner">
-                                <a href="property-single.html" class="d-inline-block mb-4"><img src="images/property_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                                <a href="property-single.html" class="d-inline-block mb-4"><img src="{{asset('assets.images.property_1.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                                 <div class="ftco-media-details">
                                     <h3>HD17 19 Utica Ave.</h3>
                                     <p>New York - USA</p>
@@ -162,7 +162,7 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
                         <div class="ftco-media-1">
                             <div class="ftco-media-1-inner">
-                                <a href="property-single.html" class="d-inline-block mb-4"><img src="images/property_2.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                                <a href="property-single.html" class="d-inline-block mb-4"><img src="{{asset('assets.images.property_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                                 <div class="ftco-media-details">
                                     <h3>HD17 19 Utica Ave.</h3>
                                     <p>New York - USA</p>
@@ -174,7 +174,7 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
                         <div class="ftco-media-1">
                             <div class="ftco-media-1-inner">
-                                <a href="property-single.html" class="d-inline-block mb-4"><img src="images/property_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                                <a href="property-single.html" class="d-inline-block mb-4"><img src="{{asset('assets.images.property_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                                 <div class="ftco-media-details">
                                     <h3>HD17 19 Utica Ave.</h3>
                                     <p>New York - USA</p>
@@ -208,7 +208,7 @@
                                     <li><a href="#"><span class="icon-linkedin"></span></a></li>
                                     <li><a href="#"><span class="icon-instagram"></span></a></li>
                                 </ul>
-                                <img src="images/person_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid">
+                                <img src="{{asset('assets.images.person_1.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid">
                             </figure>
                             <div class="p-3 bg-primary">
                                 <h3 class="mb-2">Allison Holmes</h3>
@@ -226,7 +226,7 @@
                                     <li><a href="#"><span class="icon-linkedin"></span></a></li>
                                     <li><a href="#"><span class="icon-instagram"></span></a></li>
                                 </ul>
-                                <img src="images/person_2.jpg" alt="Free website template by Free-Template.co" class="img-fluid">
+                                <img src="{{asset('assets.image.person_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid">
                             </figure>
                             <div class="p-3 bg-primary">
                                 <h3 class="mb-2">Dave Simpson</h3>
@@ -244,7 +244,7 @@
                                     <li><a href="#"><span class="icon-linkedin"></span></a></li>
                                     <li><a href="#"><span class="icon-instagram"></span></a></li>
                                 </ul>
-                                <img src="images/person_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid">
+                                <img src="{{asset('assets.image.person_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid">
                             </figure>
                             <div class="p-3 bg-primary">
                                 <h3 class="mb-2">Ben Thompson</h3>
@@ -305,9 +305,9 @@
                     <div class="col-lg-6 mb-5">
 
                         <div class="owl-carousel slide-one-item with-dots">
-                            <div><img src="images/img_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></div>
-                            <div><img src="images/img_2.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></div>
-                            <div><img src="images/img_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></div>
+                            <div><img src="{{asset('assets.images.img_1.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></div>
+                            <div><img src="{{asset('assets.images.img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></div>
+                            <div><img src="{{asset('assets.images.img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></div>
                         </div>
 
                     </div>
@@ -418,7 +418,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="ftco-testimonial-1">
                             <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                                <img src="images/person_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
+                                <img src="{{asset('assets.images.person_1.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
                                 <div>
                                     <h3>Allison Holmes</h3>
                                     <span>Customer</span>
@@ -432,7 +432,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="ftco-testimonial-1">
                             <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                                <img src="images/person_2.jpg" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
+                                <img src="{{asset('assets.images.person2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
                                 <div>
                                     <h3>James Phelps</h3>
                                     <span>Customer</span>
@@ -446,7 +446,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="ftco-testimonial-1">
                             <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                                <img src="images/person_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
+                                <img src="{{asset('assets.images.person3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
                                 <div>
                                     <h3>Nestor Helsin</h3>
                                     <span>Customer</span>
@@ -460,7 +460,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="ftco-testimonial-1">
                             <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                                <img src="images/person_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
+                                <img src="{{asset('assets.images.person3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid mr-3">
                                 <div>
                                     <h3>Allison Holmes</h3>
                                     <span>Customer</span>
@@ -484,21 +484,21 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
                         <div class="h-entry">
-                            <a href="single.html"><img src="images/img_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                            <a href="single.html"><img src="{{asset('assets.images.img_1.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                             <h2 class="font-size-regular"><a href="single.html" class="text-dark">Popular Real Estate Properties for 2019</a></h2>
                             <div class="meta mb-4">Allison Holmes <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
                         <div class="h-entry">
-                            <a href="single.html"><img src="images/img_2.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                            <a href="single.html"><img src="{{asset('assets.images.img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                             <h2 class="font-size-regular"><a href="single.html" class="text-dark">Popular Real Estate Properties for 2019</a></h2>
                             <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
                         <div class="h-entry">
-                            <a href="single.html"><img src="images/img_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                            <a href="single.html"><img src="{{asset('assets/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
                             <h2 class="font-size-regular"><a href="single.html" class="text-dark">Popular Real Estate Properties for 2019</a></h2>
                             <div class="meta mb-4">Allison Holmes <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
                         </div>
@@ -626,17 +626,17 @@
                 'resources/views/css',
                 'resources/views/images',
                 'resources/views/scss',])
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/jquery-ui.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/owl.carousel.min.js"></script>
-    <script src="./js/jquery.countdown.min.js"></script>
-    <script src="./js/bootstrap-datepicker.min.js"></script>
-    <script src="./js/jquery.easing.1.3.js"></script>
-    <script src="./js/aos.js"></script>
-    <script src="./js/jquery.fancybox.min.js"></script>
-    <script src="./js/jquery.sticky.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="{{asset('assets.js.jquery-ui.js')}}"></script>
+    <script src="{{asset('assets.js.popper.min.js')}}"></script>
+    <script src="{{asset('assets.js.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets.js.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets.js.owl.carousel.min.js')}}"></script>
+    <script src="{{asset('assets.js.jquery.countdown.min.js')}}"></script>
+    <script src="{{asset('assets.js.bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets.js.jquery.easing.1.3.js')}}"></script>
+    <script src="{{asset('assets.js.aos.js')}}"></script>
+    <script src="{{asset('assets.js.jquery.fancybox.min.js')}}"></script>
+    <script src="{{asset('assets.js.jquery.sticky.js')}}"></script>
+    <script src="{{asset('assets.js.main.js')}}"></script>
     </body>
 </html>
